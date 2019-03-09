@@ -826,4 +826,31 @@ body {
     grid-column: 3;
   }
 }
+
+.coming-soon {
+  min-height: 100vh;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.coming-soon h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  color: white;
+  font-family: 'Staatliches', monospace;
+  font-size: 15vw;
+  text-align: center;
+  line-height: 1em;
+}
+
+@media all and (max-width: 300px) {
+  .coming-soon h1 {
+    font-size: 3em;
+  }
+}
 /*# sourceMappingURL=main.css.map */

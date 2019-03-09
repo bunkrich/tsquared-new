@@ -245,3 +245,21 @@ body {
     grid-column: 3;
 }
 }
+
+.coming-soon {
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    h1 {
+        align-self: center;
+        justify-self: center;
+        color: white;
+        font-family: 'Staatliches', monospace;
+        font-size: 15vw;
+        text-align: center;
+        line-height: 1em;
+        @media all and (max-width: 300px) {
+            font-size: 3em;
+        }
+    }
+}
