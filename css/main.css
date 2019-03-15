@@ -585,6 +585,74 @@ textarea {
   }
 }
 
+#main-nav {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  font-size: 1.2em;
+  font-family: 'Staatliches', monospace;
+}
+
+#main-nav ul {
+  margin: 0;
+  list-style: none;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-nav li {
+  padding: .5em 0;
+}
+
+#main-nav a {
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: var(--dk-lav);
+  color: white;
+  border: none;
+  border-left: 2px solid var(--li-blue);
+  margin: 0 .4em;
+  padding-left: .3em;
+  padding: .1em 0;
+  border-left: none;
+  padding-left: 0;
+  border-bottom: 2px solid var(--lav);
+}
+
+#main-nav a:hover {
+  color: var(--green);
+  padding-left: .7em;
+  border-color: var(--dk-lav);
+  padding-left: 0;
+  margin: 0 .7em;
+}
+
+#main-nav a:focus {
+  color: var(--lav);
+  margin: 0 .4em;
+  border-color: var(--green);
+  border-color: var(--fire);
+}
+
+#main-nav a:active {
+  border-color: var(--fire);
+}
+
 :root {
   --pink: #F94F5A;
   --purp: #374A84;
@@ -879,13 +947,13 @@ h3 {
   min-height: 100vh;
 }
 
-#contact header {
-  min-height: 30vmin;
-}
-
 .no-webp #contact header {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(-20%, #B722FF), to(#1EFFBC)), url("/img/todd dj set live.jpg");
   background-image: linear-gradient(90deg, #B722FF -20%, #1EFFBC), url("/img/todd dj set live.jpg");
+  background: url("/img/todd dj set live.jpg"), -webkit-gradient(linear, left top, left bottom, from(#00072D), color-stop(50%, #004E64), to(#17BEBB));
+  background: url("/img/todd dj set live.jpg"), linear-gradient(180deg, #00072D 0%, #004E64 50%, #17BEBB 100%);
+  background-position: 50% 40%;
+  background-size: cover;
 }
 
 .webp #contact header {
@@ -893,10 +961,14 @@ h3 {
   background-image: linear-gradient(90deg, #B722FF -20%, #1EFFBC), url("/img/todd dj set live.webp");
   background: url("/img/todd dj set live.webp"), -webkit-gradient(linear, left top, left bottom, from(#00072D), color-stop(50%, #004E64), to(#17BEBB));
   background: url("/img/todd dj set live.webp"), linear-gradient(180deg, #00072D 0%, #004E64 50%, #17BEBB 100%);
-  background-blend-mode: luminosity, normal;
-  mix-blend-mode: normal;
   background-position: 50% 40%;
   background-size: cover;
+}
+
+#contact header {
+  min-height: 30vmin;
+  background-blend-mode: luminosity, normal;
+  mix-blend-mode: normal;
 }
 
 .contact-boxes {
