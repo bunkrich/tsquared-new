@@ -585,6 +585,74 @@ textarea {
   }
 }
 
+#main-nav {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  font-size: 1.2em;
+  font-family: 'Staatliches', monospace;
+}
+
+#main-nav ul {
+  margin: 0;
+  list-style: none;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-nav li {
+  padding: .5em 0;
+}
+
+#main-nav a {
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: var(--dk-lav);
+  color: white;
+  border: none;
+  border-left: 2px solid var(--li-blue);
+  margin: 0 .4em;
+  padding-left: .3em;
+  padding: .1em 0;
+  border-left: none;
+  padding-left: 0;
+  border-bottom: 2px solid var(--lav);
+}
+
+#main-nav a:hover {
+  color: var(--green);
+  padding-left: .7em;
+  border-color: var(--dk-lav);
+  padding-left: 0;
+  margin: 0 .7em;
+}
+
+#main-nav a:focus {
+  color: var(--lav);
+  margin: 0 .4em;
+  border-color: var(--green);
+  border-color: var(--fire);
+}
+
+#main-nav a:active {
+  border-color: var(--fire);
+}
+
 :root {
   --pink: #F94F5A;
   --purp: #374A84;
@@ -734,7 +802,7 @@ h2 {
   }
 }
 
-main {
+.blue-grade {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 28, 85, 0)), color-stop(50%, #001C55), to(#00072D));
   background: linear-gradient(180deg, rgba(0, 28, 85, 0) 0%, #001C55 50%, #00072D 100%);
   -ms-grid-row: 1;
@@ -791,15 +859,6 @@ body {
   background: var(--lav);
 }
 
-.more {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4 / 5;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  background: black;
-}
-
 .header {
   -ms-grid-row: 1;
   grid-row: 1;
@@ -807,9 +866,6 @@ body {
 }
 
 @media all and (max-width: 599px) {
-  .main {
-    min-height: auto;
-  }
   .header {
     display: -ms-grid;
     display: grid;
@@ -864,5 +920,138 @@ body {
   .coming-soon h1 {
     font-size: 3em;
   }
+}
+
+.main {
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00072D), to(black));
+  background: linear-gradient(180deg, #00072D 50%, black 100%);
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-weight: 100;
+  color: var(--green);
+}
+
+.content {
+  padding: 5vw;
+}
+
+#contact {
+  background: -webkit-gradient(linear, left bottom, left top, from(#6D78FE), color-stop(23.2%, #A682FF), color-stop(45.3%, #1EFFBC), color-stop(61.33%, #17BEBB), color-stop(85.08%, #001C55), to(#00072D));
+  background: linear-gradient(to top, #6D78FE 0%, #A682FF 23.2%, #1EFFBC 45.3%, #17BEBB 61.33%, #001C55 85.08%, #00072D 100%);
+  min-height: 100vh;
+}
+
+.no-webp #contact header {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(-20%, #B722FF), to(#1EFFBC)), url("/img/todd dj set live.jpg");
+  background-image: linear-gradient(90deg, #B722FF -20%, #1EFFBC), url("/img/todd dj set live.jpg");
+  background: url("/img/todd dj set live.jpg"), -webkit-gradient(linear, left top, left bottom, from(#00072D), color-stop(50%, #004E64), to(#17BEBB));
+  background: url("/img/todd dj set live.jpg"), linear-gradient(180deg, #00072D 0%, #004E64 50%, #17BEBB 100%);
+  background-position: 50% 40%;
+  background-size: cover;
+}
+
+.webp #contact header {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(-20%, #B722FF), to(#1EFFBC)), url("/img/todd dj set live.webp");
+  background-image: linear-gradient(90deg, #B722FF -20%, #1EFFBC), url("/img/todd dj set live.webp");
+  background: url("/img/todd dj set live.webp"), -webkit-gradient(linear, left top, left bottom, from(#00072D), color-stop(50%, #004E64), to(#17BEBB));
+  background: url("/img/todd dj set live.webp"), linear-gradient(180deg, #00072D 0%, #004E64 50%, #17BEBB 100%);
+  background-position: 50% 40%;
+  background-size: cover;
+}
+
+#contact header {
+  min-height: 30vmin;
+  background-blend-mode: luminosity, normal;
+  mix-blend-mode: normal;
+}
+
+.contact-boxes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 2fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  -ms-grid-columns: (minmax(8rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  -ms-grid-rows: (minmax(8rem, 1fr))[auto-fill];
+      grid-template-rows: repeat(auto-fill, minmax(8rem, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+.contact-boxes .contact-box {
+  background: #17BEBB;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-boxes .contact-box:nth-child(1) {
+  background: #17bebb;
+}
+
+.contact-boxes .contact-box:nth-child(2) {
+  background: rgba(23, 190, 187, 0.9);
+}
+
+.contact-boxes .contact-box:nth-child(3) {
+  background: rgba(23, 190, 187, 0.8);
+}
+
+.contact-boxes .contact-box:nth-child(4) {
+  background: rgba(23, 190, 187, 0.7);
+}
+
+.contact-boxes .contact-box:nth-child(5) {
+  background: rgba(23, 190, 187, 0.6);
+}
+
+.contact-boxes .contact-box:nth-child(6) {
+  background: rgba(23, 190, 187, 0.5);
+}
+
+.contact-boxes .contact-box:nth-child(7) {
+  background: rgba(23, 190, 187, 0.4);
+}
+
+.contact-boxes .contact-box:nth-child(8) {
+  background: rgba(23, 190, 187, 0.3);
+}
+
+.contact-boxes .contact-box:nth-child(9) {
+  background: rgba(23, 190, 187, 0.2);
+}
+
+.contact-boxes .contact-box:nth-child(10) {
+  background: rgba(23, 190, 187, 0.1);
+}
+
+.contact-boxes .contact-box:nth-child(11) {
+  background: rgba(23, 190, 187, 0);
+}
+
+.contact-boxes .contact-box p {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  min-height: 200px;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */
