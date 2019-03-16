@@ -816,6 +816,7 @@ h2 {
 }
 
 body {
+  min-width: 320px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -828,6 +829,7 @@ body {
   grid-row: 2;
   -ms-grid-column: 4;
   grid-column: 4;
+  grid-gap: 1vmax;
   -ms-grid-row-align: center;
       align-self: center;
   display: -ms-grid;
@@ -863,6 +865,7 @@ body {
   -ms-grid-row: 1;
   grid-row: 1;
   min-height: 100vh;
+  grid-gap: 1vmax;
 }
 
 @media all and (max-width: 599px) {
