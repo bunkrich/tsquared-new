@@ -892,7 +892,6 @@ h2 {
 @media all and (max-width: 599px) and (min-height: 350px) {
   .outside-box {
     max-width: 80%;
-    border: 1px solid red;
   }
 }
 
